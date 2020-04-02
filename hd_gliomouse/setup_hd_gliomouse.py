@@ -40,7 +40,7 @@ def maybe_download_weights():
 
     out_filename = join(folder_with_parameter_files, "parameters.zip")
 
-    url = "https://zenodo.org/record/3738243/files/hd-glio-mouse.zip?download=1"
+    url = "https://zenodo.org/record/3738610/files/hd-glio-mouse.zip?download=1"
     print("Downloading", url, "...")
     data = urlopen(url).read()
     with open(out_filename, 'wb') as f:
