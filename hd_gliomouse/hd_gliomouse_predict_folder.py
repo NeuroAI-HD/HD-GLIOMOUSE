@@ -33,16 +33,16 @@ def main():
     parser.add_argument("-p", "--processes", default=4, type=str, required=False,
                         help="number of processes for data preprocessing and nifti export. You should not have to "
                              "touch this. So don't unless there is a clear indication that it is required. Default: 4")
-    parser.add_argument('--overwrite_existing', default=True, type=str, required=False,
+    parser.add_argument('--keep_existing', default=True, type=str, required=False, action='store_false',
                         help="set to False to keep segmentations in output_folder and continue where you left off "
-                             "(useful if something crashes). If True then all segmentations that may already be "
-                             "present in output_folder will be overwritten. Default: True")
+                             "(useful if something crashes). If this flag is not set, all segmentations that may "
+                             "already be present in output_folder will be overwritten.")
 
     args = parser.parse_args()
     input_folder = args.input_folder
     output_folder = args.output_folder
     processes = args.processes
-    overwrite_existing = args.overwrite_existing
+    keep_existing = args.keep_existing
 
     maybe_download_weights()
 
@@ -53,7 +53,7 @@ def main():
     output_filenames = [join(output_folder, i) for i in nii_files]
 
     predict_cases(folder_with_parameter_files, input_list_of_lists, output_filenames, (0, 1, 2, 3, 4), False, processes,
-                  processes, None, True, None, overwrite_existing, False, 2, None, 3, 0)
+                  processes, None, True, None, not keep_existing, False, 2, None, 3, 0)
 
 
 if __name__ == "__main__":

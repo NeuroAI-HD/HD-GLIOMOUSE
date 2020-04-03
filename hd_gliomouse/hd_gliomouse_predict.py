@@ -22,18 +22,10 @@ from hd_gliomouse.setup_hd_gliomouse import maybe_download_weights
 
 
 def main():
-    parser = argparse.ArgumentParser(description="This script will allow you to predict a single case with hd_glio. "
-                                                 "If you have multiple cases, please use hd_glio_predict_folder (this one "
+    parser = argparse.ArgumentParser(description="This script will allow you to predict a single case with hd_gliomouse. "
+                                                 "If you have multiple cases, please use hd_gliomouse_predict_folder (this one "
                                                  "will be substantially faster for multiple cases because we can "
-                                                 "interleave preprocessing, GPU prediction and nifti export."
-                                                 "\n"
-                                                 "IMPORTANT!\n"
-                                                 "The input files must be brain extracted with the non-brain region being "
-                                                 "0 (you can achieve that by using hd-bet "
-                                                 "(https://github.com/MIC-DKFZ/HD-BET). Furthermore, the input files "
-                                                 "must be co-registered and in the same co-ordinate system (pixels "
-                                                 "arrays must be aligned)\n"
-                                                 "All input files must be niftis (.nii.gz)")
+                                                 "interleave preprocessing, GPU prediction and nifti export.")
 
     parser.add_argument("-i", type=str, required=True,
                         help="input file")
