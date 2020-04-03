@@ -33,7 +33,7 @@ def main():
     parser.add_argument("-p", "--processes", default=4, type=str, required=False,
                         help="number of processes for data preprocessing and nifti export. You should not have to "
                              "touch this. So don't unless there is a clear indication that it is required. Default: 4")
-    parser.add_argument('--keep_existing', default=True, type=str, required=False, action='store_false',
+    parser.add_argument('--keep_existing', default=True, required=False, action='store_false',
                         help="set to False to keep segmentations in output_folder and continue where you left off "
                              "(useful if something crashes). If this flag is not set, all segmentations that may "
                              "already be present in output_folder will be overwritten.")

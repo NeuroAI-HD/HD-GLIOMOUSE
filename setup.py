@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(name='hd_gliomouse',
-      version='1.0',
+      version='1.1',
       packages=["hd_gliomouse"],
       description='Tool for brain tumor segmentation in mice. This is the result of a joint project between the Department of '
                   'Neuroradiology at the Heidelberg University Hospital and the Division of Medical Image Computing at '
